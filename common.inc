@@ -19,7 +19,7 @@ PGO2_FLAGS := -fprofile-use -fprofile-dir=/home/jselbie/profile
 
 #SOLARIS HACK
 UNAME := $(shell uname -s)
-UNAMEOS := $(shell uname -o)
+UNAMEOS := $(shell uname -n)
 
 ifeq ($(UNAME),SunOS)
   SOCKET_LIBS := -lsocket -lnsl

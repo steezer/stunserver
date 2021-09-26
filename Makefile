@@ -11,10 +11,10 @@ everything:
 	$(MAKE) $(T) --directory=server
 
 copybin: everything
-	rm -f ./stunserver ./stunclient ./stuntestcode
-	cp server/stunserver .
-	cp client/stunclient .
-	cp testcode/stuntestcode .
+	@rm -f ./stunserver ./stunclient ./stuntestcode
+	@cp server/stunserver .
+	@cp client/stunclient .
+	@cp testcode/stuntestcode .
 
 
 debug: T := debug

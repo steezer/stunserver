@@ -248,7 +248,7 @@ void CStunSocket::UpdateAddresses()
     sockaddr_storage addrRemote = {};
     socklen_t len;
     int ret;
-    
+    printf("UpdateAddresses\n");
     ASSERT(_sock != -1);
     if (_sock == -1)
     {
@@ -265,6 +265,8 @@ void CStunSocket::UpdateAddresses()
     
     len = sizeof(addrRemote);
     ret = ::getpeername(_sock, (sockaddr*)&addrRemote, &len);
+    sockaddr_in *addr=(sockaddr_in*)&addrRemote;
+    printf("addrRemote: %s:%d\n", inet_ntoa(addr->sin_addr), ntohs(addr->sin_port));
     if (ret != -1)
     {
         _addrremote = addrRemote;
